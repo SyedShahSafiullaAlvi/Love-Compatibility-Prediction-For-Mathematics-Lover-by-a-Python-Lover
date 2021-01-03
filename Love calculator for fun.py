@@ -3,6 +3,10 @@
 name1=input("Enter your name:")             
 name2=input("Enter your partner's name:")
 
+phrase=input("Enter the testing phrase through whichyou wanna check your compatibility.")
+list=phrase.split()
+terms=len(list)
+
 # Making both names in upper case and concatenating them into a single string
 name=name1.upper()+' '+name2.upper() 
 
@@ -10,13 +14,15 @@ count1,count2=0,0  #one count for TRUE and another for LOVE
 
 # Applying for loop, checking each letter of 'TRUE' against the name.
 # Incrementing count on each match
-for i in 'TRUE':
-    count1 += name.count(i)
+while terms!=0:
+    j=0
+    for i in list[j]:
+        count1 += name.count(i)
 
 # Applying for loop, checking each letter of 'LOVE' against the name.
 # Incrementing count on each match
-for i in 'LOVE':
-    count2 += name.count(i)
+    for i in list[j]:
+        count2 += name.count(i)
 
 #Concatenating counts of TRUE and LOVE. 
 count=str(count1)+str(count2)
